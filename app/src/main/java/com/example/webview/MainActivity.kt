@@ -38,6 +38,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
@@ -46,6 +48,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import com.example.webview.ui.theme.WebViewTheme
+import com.example.webview.ui.theme.fonts
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -77,12 +80,13 @@ fun WebViewer() {
                 .padding(8.dp)
         ) {
             Text(
-                text = "Simple web browser",
+                text = "SIMPLE WEB BROWSER",
                 style = TextStyle(
                     textAlign = TextAlign.Center,
                     fontWeight = FontWeight.Bold,
                     fontSize = 24.sp,
                     color = Color(15, 33, 68),
+                    fontFamily = fonts
                 )
             )
             Spacer(modifier = Modifier.height(16.dp))
@@ -94,7 +98,14 @@ fun WebViewer() {
                 TextField(
                     value = url,
                     onValueChange = { url = it },
-                    label = { Text("Enter URL") },
+                    label = {
+                        Text(
+                            text = "Enter URL",
+                            style = TextStyle(
+                            fontFamily = fonts
+                            )
+                        )
+                            },
                     keyboardOptions = KeyboardOptions(
                         keyboardType = KeyboardType.Text,
                         imeAction = ImeAction.Done
@@ -135,7 +146,9 @@ fun WebViewer() {
                 ) {
                     Text(
                         "Go",
-                        style = TextStyle(fontSize = 18.sp)
+                        style = TextStyle(
+                            fontSize = 10.sp,
+                            fontFamily = fonts)
                     )
                 }
             }
