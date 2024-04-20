@@ -85,7 +85,7 @@ fun WebViewer() {
                     color = Color(15, 33, 68),
                 )
             )
-            Spacer(modifier = Modifier.height(30.dp))
+            Spacer(modifier = Modifier.height(16.dp))
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween,
@@ -106,7 +106,8 @@ fun WebViewer() {
                     ),
                     modifier = Modifier
                         .weight(1f)
-                        .size(width = 350.dp, height = 60.dp),
+                        .size(width = 350.dp, height = 60.dp)
+                        .border(1.dp, Color.Gray),
                     colors = TextFieldDefaults.textFieldColors(
                         containerColor = Color(222, 222, 222),
                         cursorColor = Color(15, 33, 68),
@@ -120,7 +121,9 @@ fun WebViewer() {
                 )
 
                 Button(
-                    modifier = Modifier.size(width = 70.dp, height = 60.dp),
+                    modifier = Modifier
+                        .size(width = 70.dp, height = 60.dp)
+                        .border(1.dp, Color.Gray),
                     shape = RectangleShape,
                     colors = ButtonDefaults.buttonColors(
                         containerColor = Color(200, 200, 200),
@@ -136,7 +139,6 @@ fun WebViewer() {
                     )
                 }
             }
-            Spacer(modifier = Modifier.height(16.dp))
             AndroidView(
                 factory = { context ->
                     WebView(context).apply {
